@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  g_weapon.c
+C:\Users\mjcap\source\repos\quake2-full\game\g_weapon.c(609,68): warning C4100: 'plane': unreferenced formal parameter
+     Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
+  game.vcxproj -> C:\Users\mjcap\source\repos\quake2-full\game\release\gamex86.dll
+          1 file(s) copied.

@@ -1954,21 +1954,21 @@ void Game_MenuInit( void )
 	s_easy_game_action.generic.flags  = QMF_LEFT_JUSTIFY;
 	s_easy_game_action.generic.x		= 0;
 	s_easy_game_action.generic.y		= 0;
-	s_easy_game_action.generic.name	= "easy";
+	s_easy_game_action.generic.name	= "Freelo";
 	s_easy_game_action.generic.callback = EasyGameFunc;
 
 	s_medium_game_action.generic.type	= MTYPE_ACTION;
 	s_medium_game_action.generic.flags  = QMF_LEFT_JUSTIFY;
 	s_medium_game_action.generic.x		= 0;
 	s_medium_game_action.generic.y		= 10;
-	s_medium_game_action.generic.name	= "medium";
+	s_medium_game_action.generic.name	= "Normal";
 	s_medium_game_action.generic.callback = MediumGameFunc;
 
 	s_hard_game_action.generic.type	= MTYPE_ACTION;
 	s_hard_game_action.generic.flags  = QMF_LEFT_JUSTIFY;
 	s_hard_game_action.generic.x		= 0;
 	s_hard_game_action.generic.y		= 20;
-	s_hard_game_action.generic.name	= "hard";
+	s_hard_game_action.generic.name	= "Suffer";
 	s_hard_game_action.generic.callback = HardGameFunc;
 
 	s_blankline.generic.type = MTYPE_SEPARATOR;
@@ -1977,14 +1977,14 @@ void Game_MenuInit( void )
 	s_load_game_action.generic.flags  = QMF_LEFT_JUSTIFY;
 	s_load_game_action.generic.x		= 0;
 	s_load_game_action.generic.y		= 40;
-	s_load_game_action.generic.name	= "load game";
+	s_load_game_action.generic.name	= "Load Saved Game";
 	s_load_game_action.generic.callback = LoadGameFunc;
 
 	s_save_game_action.generic.type	= MTYPE_ACTION;
 	s_save_game_action.generic.flags  = QMF_LEFT_JUSTIFY;
 	s_save_game_action.generic.x		= 0;
 	s_save_game_action.generic.y		= 50;
-	s_save_game_action.generic.name	= "save game";
+	s_save_game_action.generic.name	= "Save Your game";
 	s_save_game_action.generic.callback = SaveGameFunc;
 
 	s_credits_action.generic.type	= MTYPE_ACTION;

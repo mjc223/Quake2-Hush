@@ -873,6 +873,11 @@ void Cmd_List_f (void)
 	Com_Printf ("%i commands\n", i);
 }
 
+void Cmd_Help_f(void)
+{
+	Com_Printf("Here's a help screen for you all.\n");
+}
+
 /*
 ============
 Cmd_Init
@@ -888,5 +893,6 @@ void Cmd_Init (void)
 	Cmd_AddCommand ("echo",Cmd_Echo_f);
 	Cmd_AddCommand ("alias",Cmd_Alias_f);
 	Cmd_AddCommand ("wait", Cmd_Wait_f);
+	Cmd_AddCommand("help", Cmd_Help_f);
 }
 

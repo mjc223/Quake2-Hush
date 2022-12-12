@@ -501,8 +501,8 @@ void V_RenderView( float stereo_separation )
 
 		//Test adjustment
 		cl.refdef.vieworg[0] += 10;
-		cl.refdef.vieworg[1] -= 50;
-		cl.refdef.vieworg[2] += 25;
+		cl.refdef.vieworg[1] -= 25;
+		cl.refdef.vieworg[2] += 10;
 
 		cl.refdef.x = scr_vrect.x;
 		cl.refdef.y = scr_vrect.y;

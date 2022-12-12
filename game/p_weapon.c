@@ -711,10 +711,13 @@ void weapon_grenadelauncher_fire (edict_t *ent) //nade launcher
 	vec3_t	offset;
 	vec3_t	forward, right;
 	vec3_t	start;
-	int		damage = 120;
-	float	radius;
+	int		damage = 60;
+	//float	radius;
+	int kick = 5;
+	vec3_t		v;
 
-	radius = damage+40;
+	//radius = damage+40;
+
 	if (is_quad)
 		damage *= 4;
 
@@ -724,18 +727,29 @@ void weapon_grenadelauncher_fire (edict_t *ent) //nade launcher
 
 	VectorScale (forward, -2, ent->client->kick_origin);
 	ent->client->kick_angles[0] = -1;
+	
+	fire_hitscan(ent, start, forward, damage, kick, 0, 0, 0, 130); //Centered shot
 
-	fire_grenade (ent, start, forward, damage, 600, 2.5, radius);
-	/*
-	v[PITCH] = ent->client->v_angle[PITCH];
-	v[YAW]   = ent->client->v_angle[YAW] - 5;
-	v[ROLL]  = ent->client->v_angle[ROLL];
-	AngleVectors (v, forward, NULL, NULL);
-	fire_shotgun (ent, start, forward, damage, kick, 450, 325, 4, MOD_SSHOTGUN);
-	v[YAW]   = ent->client->v_angle[YAW] + 5;
-	AngleVectors (v, forward, NULL, NULL);
-	fire_shotgun (ent, start, forward, damage, kick, 450, 325, 4, MOD_SSHOTGUN);
-	*/
+	for (int i = 1; i < 4; i++)
+	{
+		v[PITCH] = ent->client->v_angle[PITCH];
+		v[YAW] = ent->client->v_angle[YAW] - (10 * i);
+		v[ROLL] = ent->client->v_angle[ROLL];
+		AngleVectors(v, forward, NULL, NULL);
+		fire_hitscan(ent, start, forward, damage/4, kick, 0, 0, 0, 110);
+	}
+
+	for (int i = 1; i < 4; i++)
+	{
+		v[PITCH] = ent->client->v_angle[PITCH];
+		v[YAW] = ent->client->v_angle[YAW] + (10 * i);
+		v[ROLL] = ent->client->v_angle[ROLL];
+		AngleVectors(v, forward, NULL, NULL);
+		fire_hitscan(ent, start, forward, damage/4, kick, 0, 0, 0, 110);
+	}
+	
+
+	
 
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -840,8 +854,11 @@ void Blaster_Fire (edict_t *ent, vec3_t g_offset, int damage, qboolean hyper, in
 	ent->client->kick_angles[0] = -1;
 
 	//fire_blaster (ent, start, forward, damage, 1000, effect, hyper);
-	fire_bullet(ent, start, forward, damage, 0, 0, 0, 0);
-
+	if(!hyper)
+		fire_bullet(ent, start, forward, damage, 0, 0, 0, 0);
+	else
+		fire_hitscan(ent, start, forward, damage, 0, 0, 0, MOD_HYPERBLASTER, 80);
+	
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -902,22 +919,20 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 		}
 		else
 		{
-			rotation = (ent->client->ps.gunframe - 5) * 2*M_PI/6;
-			offset[0] = -4 * sin(rotation);
+			offset[0] = 0;
 			offset[1] = 0;
-			offset[2] = 4 * cos(rotation);
+			offset[2] = 0;
 
 			if ((ent->client->ps.gunframe == 6) || (ent->client->ps.gunframe == 9))
 				effect = EF_HYPERBLASTER;
 			else
 				effect = 0;
-			if (deathmatch->value)
-				damage = 15;
-			else
-				damage = 20;
+
+			damage = 5000;
 			Blaster_Fire (ent, offset, damage, true, effect);
-			if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
-				ent->client->pers.inventory[ent->client->ammo_index]--;
+
+			if (!((int)dmflags->value & DF_INFINITE_AMMO))
+				ent->client->pers.inventory[ent->client->ammo_index] -= 200;
 
 			ent->client->anim_priority = ANIM_ATTACK;
 			if (ent->client->ps.pmove.pm_flags & PMF_DUCKED)
@@ -947,8 +962,8 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 
 void Weapon_HyperBlaster (edict_t *ent)
 {
-	static int	pause_frames[]	= {0};
-	static int	fire_frames[]	= {6, 7, 8, 9, 10, 11, 0};
+	static int	pause_frames[]	= {180};
+	static int	fire_frames[]	= {11, 0};
 
 	Weapon_Generic (ent, 5, 20, 49, 53, pause_frames, fire_frames, Weapon_HyperBlaster_Fire);
 }
@@ -1001,17 +1016,6 @@ void Machinegun_Fire (edict_t *ent)
 		kick *= 4;
 	}
 
-	/*
-	for (i=1 ; i<3 ; i++)
-	{
-		ent->client->kick_origin[i] = crandom() * 0.35;
-		ent->client->kick_angles[i] = crandom() * 0.7;
-	}
-	ent->client->kick_origin[0] = crandom() * 0.35;
-	ent->client->kick_angles[0] = ent->client->machinegun_shots * -1.5;
-	*/
-
-	// raise the gun as it is firing
 	if (!deathmatch->value)
 	{
 		ent->client->machinegun_shots++;
@@ -1055,8 +1059,8 @@ void Machinegun_Fire (edict_t *ent)
 
 void Weapon_Machinegun (edict_t *ent)
 {
-	static int	pause_frames[]	= {23, 45, 0};
-	static int	fire_frames[]	= {4, 5, 0};
+	static int	pause_frames[]	= {23, 65, 0};
+	static int	fire_frames[]	= {4, 0};
 
 	Weapon_Generic (ent, 3, 5, 45, 49, pause_frames, fire_frames, Machinegun_Fire);
 }

@@ -1,18 +1,9 @@
-﻿  cmd.c
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(161,33): warning C4057: 'function': 'char *' differs in indirection to slightly different base types from 'byte [8192]'
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(318,10): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(320,11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(339,11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(340,11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(463,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(470,10): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(472,11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(474,9): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(588,10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(589,10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(591,10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(587,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(660,11): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mjcap\source\repos\quake2-full\qcommon\cmd.c(678,11): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  quake2.vcxproj -> C:\Users\mjcap\source\repos\quake2-full\release\quake2.exe
+﻿  cl_view.c
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(263,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(281,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(285,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(296,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(339,2): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Michael\source\repos\Quake2-Hush\client\cl_view.c(444,63): warning C4210: nonstandard extension used: function given file scope
+  quake2.vcxproj -> C:\Users\Michael\source\repos\Quake2-Hush\release\quake2.exe
           1 file(s) copied.

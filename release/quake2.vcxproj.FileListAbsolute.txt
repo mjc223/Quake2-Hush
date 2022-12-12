@@ -1,1 +1,2 @@
 C:\Users\mjcap\source\repos\quake2-full\release\quake2.exe
+C:\Users\Michael\source\repos\Quake2-Hush\release\quake2.exe

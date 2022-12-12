@@ -1,8 +1,10 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(500,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   p_weapon.c
-C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(840,83): warning C4100: 'effect': unreferenced formal parameter
-C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(898,8): warning C4101: 'rotation': unreferenced local variable
-C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(981,6): warning C4101: 'i': unreferenced local variable
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(128,19): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(128,14): warning C4024: 'Com_Printf': different types for formal and actual parameter 1
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(841,83): warning C4100: 'effect': unreferenced formal parameter
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(899,8): warning C4101: 'rotation': unreferenced local variable
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(982,6): warning C4101: 'i': unreferenced local variable
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> C:\Users\Michael\source\repos\Quake2-Hush\game\release\gamex86.dll
           1 file(s) copied.

@@ -153,8 +153,8 @@ void InitGame (void)
 {
 	gi.dprintf ("==== InitGame ====\n");
 
-	gun_x = gi.cvar ("gun_x", "0", 0);
-	gun_y = gi.cvar ("gun_y", "0", 0);
+	gun_x = gi.cvar ("gun_x", "10", 10);
+	gun_y = gi.cvar ("gun_y", "10", 10);
 	gun_z = gi.cvar ("gun_z", "0", 0);
 
 	//FIXME: sv_ prefix is wrong for these

@@ -20,16 +20,16 @@ Weaponry has been augmented in Hush. Survival Horror games like *Resident Evil* 
 
 Primaries: 
 
- - Pump Shotgun (High damage at close, moderate ammo efficiency, bad range, low rof)
- - Pistol (Moderate damage, High ammo capacity, moderate rof)
- - Hunting Rifle (Extreme damage, extreme range, low ammo efficiency, low ROF)
+ - Pump Shotgun (High damage at close, moderate ammo efficiency, bad range, low rof) (Over super shotgun)
+ - Pistol (Moderate damage, High ammo capacity, moderate rof) (Over blaster)
+ - Hunting Rifle (Extreme damage, extreme range, low ammo efficiency, low ROF) (Over railgun)
 
 Melee: 
 
- - Knife: The default option, fast swing speed for stun locking, but pitiful range and weak damage.
- - Aluminum Bat: The all rounder melee weapon, sizable range, respectable damage, but still only hits one target.
- - Fire Axe: The crowd killer, it can hit multiple targets at once, has good knockback, but painful windup.
- - Taser: Instantly incapacitates any enemy, but single use.
+ - Knife: The default option, fast swing speed for stun locking, but pitiful range and weak damage. (Over machinegun)
+ - Aluminum Bat: The all rounder melee weapon, sizable range, respectable damage, but still only hits one target. (Over machinegun)
+ - Fire Axe: The crowd killer, it can hit multiple targets at once, has good knockback, but painful windup. (Over grenade launcher)
+ - Taser: Instantly incapacitates any enemy, but single use. (Over Hyper Blaster)
 
 
 ### Enemy Behavior
@@ -50,13 +50,13 @@ In many survival horror games, namely *Silent Hill*, you are given tools to make
 Most of Hush's functionality can be tested by loading up the test map, but with debug functionality, more specific things can be tested.
 
 ### Static Camera Angles and Player Movement:
-Lorem Ipsum
+Traditional fps controls, minus the ability to jump.
 
 ### Object Interaction/Item Descriptions:
-Lorem Ipsum
+Type desc in console to view the currently held weapon's description
 
 ### Weaponry:
-Lorem Ipsum
+Type give all in console
 
 ### Enemy Behavior:
 Lorem Ipsum

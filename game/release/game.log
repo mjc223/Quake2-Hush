@@ -5,6 +5,7 @@ C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(128,14): warning C4024
 C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(841,83): warning C4100: 'effect': unreferenced formal parameter
 C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(899,8): warning C4101: 'rotation': unreferenced local variable
 C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(982,6): warning C4101: 'i': unreferenced local variable
+C:\Users\Michael\source\repos\Quake2-Hush\game\p_weapon.c(1400,8): warning C4189: 'damage_radius': local variable is initialized but not referenced
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> C:\Users\Michael\source\repos\Quake2-Hush\game\release\gamex86.dll
           1 file(s) copied.

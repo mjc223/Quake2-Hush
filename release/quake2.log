@@ -169,10 +169,10 @@ C:\Users\Michael\source\repos\Quake2-Hush\client\cl_input.c(479): warning C4700:
 C:\Users\Michael\source\repos\Quake2-Hush\client\cl_fx.c(2228): warning C4701: potentially uninitialized local variable 'time' used
 C:\Users\Michael\source\repos\Quake2-Hush\client\cl_ents.c(494): warning C4701: potentially uninitialized local variable 'oldstate' used
 C:\Users\Michael\source\repos\Quake2-Hush\client\cl_ents.c(494): warning C4703: potentially uninitialized local pointer variable 'oldstate' used
-C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(53): warning C4706: assignment within conditional expression
 C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(62): warning C4706: assignment within conditional expression
-C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(202): warning C4706: assignment within conditional expression
 C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(222): warning C4706: assignment within conditional expression
+C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(53): warning C4706: assignment within conditional expression
+C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(202): warning C4706: assignment within conditional expression
 C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(449): warning C4706: assignment within conditional expression
 C:\Users\Michael\source\repos\Quake2-Hush\win32\cd_win.c(458): warning C4706: assignment within conditional expression
   Compiling...
@@ -430,8 +430,8 @@ C:\Users\Michael\source\repos\Quake2-Hush\server\sv_ents.c(171): warning C4703: 
 C:\Users\Michael\source\repos\Quake2-Hush\win32\snd_win.c(692): warning C4701: potentially uninitialized local variable 's' used
 C:\Users\Michael\source\repos\Quake2-Hush\qcommon\pmove.c(819): warning C4702: unreachable code
 C:\Users\Michael\source\repos\Quake2-Hush\qcommon\pmove.c(824): warning C4702: unreachable code
-C:\Users\Michael\source\repos\Quake2-Hush\win32\net_wins.c(154): warning C4715: 'NET_CompareBaseAdr': not all control paths return a value
 C:\Users\Michael\source\repos\Quake2-Hush\win32\net_wins.c(124): warning C4715: 'NET_CompareAdr': not all control paths return a value
+C:\Users\Michael\source\repos\Quake2-Hush\win32\net_wins.c(154): warning C4715: 'NET_CompareBaseAdr': not all control paths return a value
 C:\Users\Michael\source\repos\Quake2-Hush\win32\net_wins.c(235): warning C4706: assignment within conditional expression
 C:\Users\Michael\source\repos\Quake2-Hush\win32\net_wins.c(427): warning C4701: potentially uninitialized local variable 'net_socket' used
 C:\Users\Michael\source\repos\Quake2-Hush\client\menu.c(3580): warning C4715: 'PlayerConfig_ScanDirectories': not all control paths return a value

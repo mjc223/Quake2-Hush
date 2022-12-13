@@ -325,8 +325,8 @@ void HelpComputer (edict_t *ent)
 		sk,
 		level.level_name,
 		"Here I'll tell you how to play the game",
-		"And give you commands if necessary\n \
-		Type help in the console for more",
+		"Jumping is disabled, type desc in the console for weapon descriptions\n \
+		Type [x] for radio",
 		level.killed_monsters, level.total_monsters, 
 		level.found_goals, level.total_goals,
 		level.found_secrets, level.total_secrets);

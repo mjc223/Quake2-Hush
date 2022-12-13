@@ -1404,6 +1404,13 @@ void weapon_bfg_fire (edict_t *ent)
 	else
 		damage = 500;
 
+	// send muzzle flash
+	gi.WriteByte(svc_muzzleflash);
+	gi.WriteShort(ent - g_edicts);
+	gi.WriteByte(MZ_BFG | is_silenced);
+	gi.multicast(ent->s.origin, MULTICAST_PVS);
+	PlayerNoise(ent, ent->s.origin, PNOISE_WEAPON);
+
 	if (ent->client->ps.gunframe == 9)
 	{
 		// send muzzle flash
@@ -1418,6 +1425,7 @@ void weapon_bfg_fire (edict_t *ent)
 		return;
 	}
 
+	/*
 	// cells can go down during windup (from power armor hits), so
 	// check again and abort firing if we don't have enough now
 	if (ent->client->pers.inventory[ent->client->ammo_index] < 50)
@@ -1425,6 +1433,7 @@ void weapon_bfg_fire (edict_t *ent)
 		ent->client->ps.gunframe++;
 		return;
 	}
+	*/
 
 	if (is_quad)
 		damage *= 4;
@@ -1433,29 +1442,34 @@ void weapon_bfg_fire (edict_t *ent)
 
 	VectorScale (forward, -2, ent->client->kick_origin);
 
+	/*
 	// make a big pitch kick with an inverse fall
 	ent->client->v_dmg_pitch = -40;
 	ent->client->v_dmg_roll = crandom()*8;
 	ent->client->v_dmg_time = level.time + DAMAGE_TIME;
+	*/
 
 	VectorSet(offset, 8, 8, ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
-	fire_bfg (ent, start, forward, damage, 400, damage_radius);
+	//fire_bfg (ent, start, forward, damage, 400, damage_radius);
 
 	ent->client->ps.gunframe++;
 
 	PlayerNoise(ent, start, PNOISE_WEAPON);
 
+	/*
 	if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
 		ent->client->pers.inventory[ent->client->ammo_index] -= 50;
+		*/
 }
 
 void Weapon_BFG (edict_t *ent)
 {
-	static int	pause_frames[]	= {39, 45, 50, 55, 0};
-	static int	fire_frames[]	= {9, 17, 0};
+	static int	pause_frames[]	= {6, 0};
+	static int	fire_frames[]	= {5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0 };
 
-	Weapon_Generic (ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);
+	Weapon_Generic (ent, 4, 5, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);
+
 }
 
 

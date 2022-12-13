@@ -533,7 +533,7 @@ void Cmd_WeapPrev_f (edict_t *ent)
 		return;
 
 	selected_weapon = ITEM_INDEX(cl->pers.weapon);
-
+	
 	// scan  for the next valid one
 	for (i=1 ; i<=MAX_ITEMS ; i++)
 	{
@@ -899,9 +899,49 @@ void Cmd_PlayerList_f(edict_t *ent)
 	gi.cprintf(ent, PRINT_HIGH, "%s", text);
 }
 
-void Cmd_ThirdPerson_f(edict_t* ent)
+void Cmd_ViewDescription_f(edict_t* ent)
 {
+	gclient_t* cl;
+	cl = ent->client;
 
+	int selected_weapon = ITEM_INDEX(cl->pers.weapon);
+	switch (selected_weapon)
+	{
+	case 7:
+		Com_Printf("Protag comment on Blaster");
+		break;
+	case 8:
+		Com_Printf("Protag comment on Shotgun");
+		break;
+	case 9:
+		Com_Printf("Protag comment on SuperShotgun");
+		break;
+	case 10:
+		Com_Printf("Protag comment on Machinegun");
+		break;
+	case 11:
+		Com_Printf("Protag comment on Chaingun");
+		break;
+	case 12:
+		Com_Printf("Protag comment on Grenade");
+		break;
+	case 13:
+		Com_Printf("Protag comment on Grenade Launcher");
+		break;
+	case 14:
+		Com_Printf("Protag comment on Rocket Launcher");
+		break;
+	case 15:
+		Com_Printf("Protag comment on HyperBlaster");
+		break;
+	case 16:
+		Com_Printf("Protag comment on Rail Gun");
+		break;
+	case 17:
+		Com_Printf("Protag comment on BFG10k");
+		break;
+
+	}
 }
 
 
@@ -992,8 +1032,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_Wave_f(ent);
 	else if (Q_stricmp(cmd, "playerlist") == 0)
 		Cmd_PlayerList_f(ent);
-	else if (Q_stricmp(cmd, "tpp") == 0)
-		Cmd_ThirdPerson_f(ent);
+	else if (Q_stricmp(cmd, "desc") == 0)
+		Cmd_ViewDescription_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

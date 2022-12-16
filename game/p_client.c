@@ -1345,6 +1345,8 @@ void ClientBegin (edict_t *ent)
 		}
 	}
 
+	ent->client->pers.radioActive = 0;
+
 	// make sure all view stuff is valid
 	ClientEndServerFrame (ent);
 }
@@ -1652,7 +1654,12 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		if (ent->groundentity && !pm.groundentity && (pm.cmd.upmove >= 10) && (pm.waterlevel == 0))
 		{
 			gi.sound(ent, CHAN_VOICE, gi.soundindex("*jump1.wav"), 1, ATTN_NORM, 0);
-			PlayerNoise(ent, ent->s.origin, PNOISE_SELF);
+			//PlayerNoise(ent, ent->s.origin, PNOISE_SELF);
+		}
+
+		if (ent->client->pers.radioActive == 1)
+		{
+			PlayerNoise(ent, ent->s.origin, PNOISE_WEAPON);
 		}
 
 		ent->viewheight = pm.viewheight;

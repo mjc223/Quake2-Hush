@@ -865,6 +865,8 @@ typedef struct
 	int			helpchanged;
 
 	qboolean	spectator;			// client is a spectator
+
+	int radioActive;
 } client_persistant_t;
 
 // client data that stays across deathmatch respawns

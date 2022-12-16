@@ -20,7 +20,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "g_local.h"
 #include "m_player.h"
 
-
 char *ClientTeam (edict_t *ent)
 {
 	char		*p;
@@ -944,6 +943,18 @@ void Cmd_ViewDescription_f(edict_t* ent)
 	}
 }
 
+void Cmd_RadioToggle_f(edict_t* ent)
+{
+	gclient_t* cl;
+	cl = ent->client;
+
+	if (cl->pers.radioActive == 0)
+		cl->pers.radioActive = 1;
+	else
+		cl->pers.radioActive = 0;
+
+}
+
 
 /*
 =================
@@ -1034,6 +1045,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_PlayerList_f(ent);
 	else if (Q_stricmp(cmd, "desc") == 0)
 		Cmd_ViewDescription_f(ent);
+	else if (Q_stricmp(cmd, "radio") == 0)
+		Cmd_RadioToggle_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }
